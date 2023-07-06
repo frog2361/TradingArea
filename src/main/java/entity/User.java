@@ -10,13 +10,10 @@ public class User {
 
     private String lastName;
 
-    private UserStatus userStatus;
-
-    public User(int id, String name, String lastName, UserStatus userStatus) {
+    public User(int id, String name, String lastName) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
-        this.userStatus = userStatus;
     }
 
     public int getId() {
@@ -49,7 +46,6 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", userStatus=" + userStatus +
                 '}';
     }
 

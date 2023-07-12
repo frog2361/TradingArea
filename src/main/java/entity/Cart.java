@@ -5,11 +5,12 @@ import java.util.Objects;
 public class Cart {
     private double totalAmount;
 
-    private short numberOfGoods;
+    private int numberOfGoods;
 
     private Product product;
 
-    public Cart(double totalAmount, short numberOfGoods, Product product) {
+    public Cart(double totalAmount, int
+            numberOfGoods, Product product) {
         this.totalAmount = totalAmount;
         this.numberOfGoods = numberOfGoods;
         this.product = product;
@@ -23,7 +24,7 @@ public class Cart {
         this.totalAmount = totalAmount;
     }
 
-    public short getNumberOfGoods() {
+    public int getNumberOfGoods() {
         return numberOfGoods;
     }
 

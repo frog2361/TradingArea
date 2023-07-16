@@ -4,32 +4,37 @@ import java.util.Objects;
 
 public class User {
 
-    private int id;
+    private Long id;
 
-    private String name;
+    private String firstName;
 
     private String lastName;
 
-    public User(int id, String name, String lastName) {
+    private int age;
+
+    private String gender;
+    public User(Long id, String firstName, String lastName, int age, String gender) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
         this.lastName = lastName;
+        this.age = age;
+        this.gender = gender;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -40,12 +45,22 @@ public class User {
         this.lastName = lastName;
     }
 
+    public int getAge() {return age;}
+
+    public void setAge(int age) {this.age = age;}
+
+    public String getGender() {return gender;}
+
+    public void setGender(String gender) {this.gender = gender;}
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
                 '}';
     }
 

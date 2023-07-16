@@ -1,29 +1,33 @@
 package entity;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Product {
 
-    private int id;
+    private Long id;
 
     private String name;
 
     private String brand;
 
-    private double cost;
+    private BigDecimal cost;
 
-    public Product(int id, String name, String brand, double cost) {
+    private String description;
+
+    public Product(Long id, String name, String brand, BigDecimal cost, String description) {
         this.id = id;
         this.name = name;
         this.brand = brand;
         this.cost = cost;
+        this.description = description;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -43,13 +47,15 @@ public class Product {
         this.brand = brand;
     }
 
-    public double getCost() {
+    public BigDecimal getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(BigDecimal cost) {
         this.cost = cost;
     }
+
+    public String getDescription() {return description;}
 
     @Override
     public String toString() {
@@ -58,8 +64,11 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", brand='" + brand + '\'' +
                 ", cost=" + cost +
+                ", description='" + description + '\'' +
                 '}';
     }
+
+    public void setDescription(String description) {this.description = description;}
 
     @Override
     public boolean equals(Object o) {

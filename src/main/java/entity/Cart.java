@@ -1,26 +1,36 @@
 package entity;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Cart {
-    private double totalAmount;
+
+    private Long id;
+
+    private BigDecimal totalAmount;
 
     private int numberOfGoods;
 
-    private Product product;
+    private ArrayList<Product> list;
 
-    public Cart(double totalAmount, int
-            numberOfGoods, Product product) {
+    public Cart(Long id,BigDecimal totalAmount, int
+            numberOfGoods, ArrayList<Product> list){
+        this.id = id;
         this.totalAmount = totalAmount;
         this.numberOfGoods = numberOfGoods;
-        this.product = product;
+        this.list = list;
     }
 
-    public double getTotalAmount() {
+    public Long getId() {return id;}
+
+    public void setId(Long id) {this.id = id;}
+
+    public BigDecimal getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(double totalAmount) {
+    public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
     }
 
@@ -32,33 +42,30 @@ public class Cart {
         this.numberOfGoods = numberOfGoods;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
+    public ArrayList<Product> getList() {return list;}
 
     @Override
     public String toString() {
         return "Cart{" +
-                "totalAmount=" + totalAmount +
+                "id=" + id +
+                ", totalAmount=" + totalAmount +
                 ", numberOfGoods=" + numberOfGoods +
-                ", product=" + product +
+                ", list=" + list +
                 '}';
     }
+
+    public void setList(ArrayList<Product> list) {this.list = list;}
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cart cart = (Cart) o;
-        return Objects.equals(product, cart.product);
+        return Objects.equals(id, cart.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(product);
+        return Objects.hash(id);
     }
 }
